@@ -12,4 +12,12 @@
 *.la
 *.a
 
+# Windows
 Thumbs.db
+
+# Sifteo
+*.gen.cpp
+*.gen.d
+*.gen.h
+*.elf
+*.d

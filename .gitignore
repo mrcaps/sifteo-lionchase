@@ -21,3 +21,6 @@ Thumbs.db
 *.gen.h
 *.elf
 *.d
+
+# Sublime
+*.sublime-workspace

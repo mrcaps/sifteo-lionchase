@@ -41,6 +41,36 @@ Side opposite(Side in) {
     }
 }
 
+class Beest {
+public:
+    Beest(unsigned my_spritedex, CubeID my_cube, Float2 my_x, Float2 my_targx) :
+        spritedim(32),
+        spritedx(my_spritedex),
+        cube(my_cube),
+        x(my_x),
+        targx(my_targx)
+    {
+
+    }
+
+    void update(TimeDelta tdelta) {
+        x += (targx - x) * 0.01f;
+    }
+
+    void draw() {
+        vid[cube].sprites[spritedx].setImage(Beasts[0]);
+        vid[cube].sprites[spritedx].move(x - vec(spritedim, spritedim));        
+    }
+
+private:
+    unsigned spritedim;
+    unsigned spritedx;
+
+    CubeID cube;
+    Float2 x;
+    Float2 targx;
+};
+
 class Actor {
 public:
     Actor(CubeID startCube) : 
